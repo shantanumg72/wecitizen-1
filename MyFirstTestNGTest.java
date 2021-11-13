@@ -16,7 +16,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
 public class MyFirstTestNGTest {
-	WebDriver driver;
+	WebDriver driver; //This is my browser
 
 	@BeforeClass
 	public void preConditionsForAllTest() {

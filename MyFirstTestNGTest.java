@@ -87,4 +87,40 @@ public class MyFirstTestNGTest {
 		driver.findElement(By.name("q")).sendKeys("Today is Saturday");
 	}
 
+@Test
+	public void testNicheThyselfLogin() {
+		System.out.println("I  am in Test");
+		driver.get("https://nichethyself.com/tourism/home.html");
+		WebElement user = driver.findElement(By.name("username"));
+		System.out.println("Tag of username is " + user.getTagName());
+		System.out.println("type attrubute of username is " + user.getAttribute("type"));
+		System.out.println("Name attrubute of username is " + user.getAttribute("name"));
+		System.out.println("Placeholder attrubute of username is " + user.getAttribute("placeholder"));
+		user.sendKeys("stc123");
+		driver.findElement(By.name("password")).sendKeys("12345");// Method
+																	// chaining
+																	// in Java
+		driver.findElement(By.name("username")).submit();// submitting the form.
+		
+//		driver.findElement(By.id("loginsection")).findElement(By.name("loginform")) //search inside an element having id attribute loginsection
+		driver.findElement(By.name("loginform"));//Entire page
+
+		String expectedTitle = "My account";
+		String actualTitle = driver.getTitle();
+
+		/*
+		 * if (expectedTitle.equals(actualTitle))
+		 * System.out.println("Test Case Passed"); else
+		 * System.out.println("Test Case Failed");
+		 */		
+		assertEquals(actualTitle, expectedTitle);
+	}
+
+	 @Test
+	public void googleTest() {
+		driver.get("http://www.google.com");
+		driver.findElement(By.name("q")).sendKeys("Today is Saturday");
+	}
+
+
 }
